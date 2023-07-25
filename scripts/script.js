@@ -6,10 +6,9 @@ import { perguntasSeries } from "./module/series.js";
 function criaPerguntas(vetor) {
     const perguntasSection = document.querySelector("#perguntas");
 
-    vetor.forEach((pergunta) => {
-        for (let i = 0; i <= vetor.length; i++) {
+    vetor.forEach((pergunta, i) => {
 
-            perguntasSection.innerHTML += `
+        perguntasSection.innerHTML += `
 
                 <h3>${pergunta.pergunta}</h3>
 
@@ -26,10 +25,7 @@ function criaPerguntas(vetor) {
                 D - ${pergunta.respostas.d}
 
         `
-        }
     })
-
-
 }
 
 criaPerguntas(perguntasFilmes);
