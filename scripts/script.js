@@ -2,9 +2,26 @@ import { perguntasFilmes } from "./module/filmes.js";
 import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
 
+document.getElementById('iniciarQuiz').addEventListener('click', () => {
+
+    const nome = document.getElementById('nome').value;
+    const temaSelecionado = document.getElementById('tema').value;
+
+    if (temaSelecionado === 'filmes') {
+        criaPerguntas(perguntasFilmes);
+    } else if (temaSelecionado === 'livros') {
+        criaPerguntas(perguntasLivros);
+    } else if (temaSelecionado === 'series') {
+        criaPerguntas(perguntasSeries);
+    } else {
+        alert('Selecione um tema válido!');
+    }
+});
 
 function criaPerguntas(vetor) {
     const perguntasSection = document.querySelector("#perguntas");
+
+    perguntasSection.innerHTML = '';
 
     vetor.forEach((pergunta, i) => {
 
@@ -26,9 +43,7 @@ function criaPerguntas(vetor) {
 
         `
     })
-}
-
-criaPerguntas(perguntasFilmes);
+};
 
 
 
