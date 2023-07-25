@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quiz</title>
+        <script src="./scripts/modo-escuro.js" defer></script>
+        <script src="./scripts/script.js" defer type="module"></script>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <script src="./scripts/modo-escuro.js" defer></script>
-    <script src="./scripts/script.js" defer type="module"></script>
-    <link rel="stylesheet" href="css/main.css">
-</head>
+    <body>
+        <button id="modo-escuro" class="button">Modo escuro</button>
 
-<body>
-    <button id="modo-escuro" class="button">Modo escuro</button>
+        <div class="audio">
+            <audio id="myAudio" controls>
+                <source src="./audio-arquivo/sound.mp3" type="audio/mpeg" />
+                Seu navegador não possui suporte para audio, tente outro
+                navegador.</audio
+            ><br /><br />
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pause</button>
+        </div>
 
-    <section id="usuario">
-        <form id="formulario">
-            <h2>Quiz</h2>
-            <p>Preencha seu nome, escolha um tema e clique em Iniciar Quiz para começar.</p>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
-            
-            <label for="tema">Tema:</label>
-            <select id="tema">
-                <option value="filmes">Filmes</option>
-                <option value="livros">Livros</option>
-                <option value="series">Séries</option>
-            </select>
+        <section id="usuario">
+            <form id="formulario">
+                <h2>Quiz</h2>
+                <p>
+                    Preencha seu nome, escolha um tema e clique em Iniciar Quiz
+                    para começar.
+                </p>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required />
 
-            <button type="button" id="iniciarQuiz">Iniciar Quiz</button>
-        </form>
-    </section>
+                <label for="tema">Tema:</label>
+                <select id="tema">
+                    <option value="filmes">Filmes</option>
+                    <option value="livros">Livros</option>
+                    <option value="series">Séries</option>
+                </select>
 
-    <section id="perguntas">
+                <button type="button" id="iniciarQuiz">Iniciar Quiz</button>
+            </form>
+        </section>
 
-    </section>
+        <section id="perguntas"></section>
 
-</body>
-
+        <script src="script/script.js"></script>
+    </body>
 </html>
