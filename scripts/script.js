@@ -1,6 +1,7 @@
 import { perguntasFilmes } from "./module/filmes.js";
 import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
+import { verificarRespostas } from "./module/filmes.js";
 
 document.getElementById('iniciarQuiz').addEventListener('click', () => {
 
@@ -54,5 +55,3 @@ function pauseAudio() {
     let x = document.getElementById("myAudio");
     x.pause();
 }  
-
-
