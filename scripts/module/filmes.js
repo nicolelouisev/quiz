@@ -102,7 +102,7 @@ export const perguntasFilmes = [
 ];
 
 
-function verificarRespostas() {
+export function verificarRespostas() {
     const respostasCorretas = ['a', 'b', 'c', 'a', 'c', 'c', 'a', 'c', 'b', 'a']; // Adicione aqui as respostas corretas para cada pergunta
 
     let numPerguntas = 2; // Defina o número total de perguntas no quiz
