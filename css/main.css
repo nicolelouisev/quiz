@@ -2,3 +2,59 @@
     color: #ffff;
     background-color: #1c1c1c;
 }
+
+/* Css do cronômetro */
+.container {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #172953;
+}
+
+.timer {
+    font-size: 55px;
+    font-weight: bold;
+    color: #333;
+}
+
+.timer .time {
+    min-width: 60px;
+}
+
+.separator {
+    padding: 0 10px;
+    color: #525763;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    background-color: #175cff;
+    color: #fff;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+#PauseBtn, #ResumeBtn {
+    display: none;
+}
+

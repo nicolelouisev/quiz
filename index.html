@@ -7,6 +7,8 @@
         <script src="./scripts/modo-escuro.js" defer></script>
         <script src="./scripts/script.js" defer type="module"></script>
         <link rel="stylesheet" href="css/main.css" />
+        <script src="./scripts/cronômetro.js" defer></script>
+        
     </head>
 
     <body>
@@ -20,6 +22,22 @@
             ><br /><br />
             <button onclick="playAudio()">Play</button>
             <button onclick="pauseAudio()">Pause</button>
+        </div>
+        <div class="container"> <!-- cronômetro div-->
+            <h1> O tempo está passando</h1>
+            <div class="timer">
+                <div class="time" id="minutes">00</div>
+                <div class="separator">:</div>
+                <div class="time" id="seconds">00</div>
+                <div class="separator">:</div>
+                <div class="time" id="milliseconds">000</div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="button btn" id="StartBtn">Iniciar</div>
+            <div class="button btn" id="PauseBtn">Pausar</div>
+            <div class="button btn" id="ResumeBtn">Continuar</div>
+            <div class="button btn" id="ResetBtn">Resetar</div>
         </div>
 
         <section id="usuario">
