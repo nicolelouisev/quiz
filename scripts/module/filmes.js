@@ -100,3 +100,29 @@ export const perguntasFilmes = [
         respostaCorreta: "a",
     },
 ];
+
+
+function verificarRespostas() {
+    const respostasCorretas = ['a', 'b', 'c', 'a', 'c', 'c', 'a', 'c', 'b', 'a']; // Adicione aqui as respostas corretas para cada pergunta
+
+    let numPerguntas = 2; // Defina o número total de perguntas no quiz
+
+    let pontos = 0;
+
+    for (let i = 1; i <= numPerguntas; i++) {
+        const respostaSelecionada = document.querySelector(`input[name="resposta${i}"]:checked`);
+        if (respostaSelecionada) {
+            const resposta = respostaSelecionada.value;
+            if (resposta === respostasCorretas[i - 1]) {
+                pontos++;
+            }
+        }
+    }
+
+    exibirResultado(pontos, numPerguntas);
+}
+
+function exibirResultado(pontos, totalPerguntas) {
+    const resultadoContainer = document.getElementById('resultado');
+    resultadoContainer.innerHTML = `Você acertou ${pontos} de ${totalPerguntas} perguntas.`;
+}

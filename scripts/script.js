@@ -54,5 +54,3 @@ function pauseAudio() {
     let x = document.getElementById("myAudio");
     x.pause();
 }  
-
-
