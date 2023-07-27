@@ -1,19 +1,21 @@
 import { perguntasFilmes } from "./module/filmes.js";
 import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
-import { verificarRespostas } from "./module/filmes.js";
+
+
+const temaSelecionado = document.getElementById('tema').value;
 
 document.getElementById('iniciarQuiz').addEventListener('click', () => {
 
-    const nome = document.getElementById('nome').value;
-    const temaSelecionado = document.getElementById('tema').value;
-
     if (temaSelecionado === 'filmes') {
         criaPerguntas(perguntasFilmes);
+        respostasCorretas(perguntasFilmes);
     } else if (temaSelecionado === 'livros') {
         criaPerguntas(perguntasLivros);
+        respostasCorretas(perguntasLivros);
     } else if (temaSelecionado === 'series') {
         criaPerguntas(perguntasSeries);
+        respostasCorretas(perguntasSeries);
     } else {
         alert('Selecione um tema válido!');
     }
@@ -28,6 +30,7 @@ function criaPerguntas(vetor) {
 
         perguntasSection.innerHTML += `
 
+            <div class="divPergunta">
                 <h3>${pergunta.pergunta}</h3>
 
                 <input type="radio" name="resposta${i}" id="a">
@@ -41,9 +44,16 @@ function criaPerguntas(vetor) {
 
                 <input type="radio" name="resposta${i}" id="d">
                 D - ${pergunta.respostas.d}
-
+            </div>
         `
     })
+
+    perguntasSection.innerHTML += `
+            
+            <button id="finaliza"> Finalizar </button>
+        `
+
+    document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
 };
 
 
@@ -64,3 +74,74 @@ document.querySelector("#audio-desligado").addEventListener("click", () => {
     divLigado.classList.remove("esconde");
     divDesligado.classList.add("esconde");
 })
+
+let respostasCertas = [];
+// Traz as respostas corretas e armazena em um vetor, baseado na escolha do usuário.
+function respostasCorretas(perguntas) {
+    respostasCertas = [];
+    perguntas.forEach(resp => {
+        respostasCertas.push(resp.respostaCorreta);
+    })
+}
+
+let respostasUser = [];
+// Verifica se o usuário respondeu todas as perguntas e armazenas as respostas em um vetor.
+function respostasUsuario() {
+    const radios = document.querySelectorAll("input[type=radio]:checked");
+
+    radios.forEach(radio => {
+        respostasUser.push(radio.id);
+    })
+
+    if (respostasUser.length < 10) {
+        alert("Responda todas as perguntas!");
+        respostasUser = [];
+
+    } else {
+        verificaRespostas();
+    }
+}
+
+
+// Verifica quais respostas estão certas e quais estão erradas.
+
+let acertos = 0;
+let erros = 0;
+function verificaRespostas() {
+    const divs = document.querySelectorAll(".divPergunta");
+    const radios = document.querySelectorAll("input[type=radio]")
+
+    for (let i = 0; i < respostasCertas.length; i++) {
+
+        if (respostasCertas[i] == respostasUser[i]) {
+            acertos++;
+            divs[i].classList.add("respostaCorreta");
+            desabilitaResposta(radios)
+
+        } else {
+            erros++
+            divs[i].classList.add("respostaErrada");
+            desabilitaResposta(radios)
+
+        }
+
+    }
+    pegaInfoUsuario()
+}
+
+
+// Desabilita os campos (input type=radio) após as respostas serem validadas. 
+function desabilitaResposta(campos) {
+    campos.forEach(campo => {
+        if (!campo.checked) {
+            campo.disabled = true;
+        }
+    })
+}
+
+let infoUsuario = [];
+// Captura as informações do usuário: nome, tema, acertos e erros.
+function pegaInfoUsuario() {
+    const nome = document.getElementById('nome').value;
+    infoUsuario = { nome, temaSelecionado, acertos, erros };
+}
