@@ -54,7 +54,12 @@
     transform: scale(1.1);
 }
 
-#PauseBtn, #ResumeBtn {
+#PauseBtn,
+#ResumeBtn {
     display: none;
 }
 
+
+.esconde {
+    display: none;
+}
