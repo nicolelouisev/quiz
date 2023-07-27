@@ -3,7 +3,7 @@ import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
 import { verificarRespostas } from "./module/filmes.js";
 
-document.getElementById('iniciarQuiz').addEventListener('click', () => {
+document.getElementById('iniciarQuiz').addEventListener('click', () => { // modificação para integrar o cronômetro no iniciar quiz voltar aqui dps, nehuma modificação foi feita ainda
 
     const nome = document.getElementById('nome').value;
     const temaSelecionado = document.getElementById('tema').value;

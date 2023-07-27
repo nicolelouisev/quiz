@@ -1,18 +1,16 @@
+// Copie e cole o restante do código abaixo do seu código existente
 const minutesEl = document.querySelector("#minutes");
 const secondsEl = document.querySelector("#seconds");
 const millisecondsEl = document.querySelector("#milliseconds");
-const StartBtnEl = document.querySelector("#StartBtn");
-const PauseBtnEl = document.querySelector("#PauseBtn");
-const ResumeBtnEl = document.querySelector("#ResumeBtn");
-const ResetBtnEl = document.querySelector("#ResetBtn");
+const IniciarQuizEl = document.querySelector("#iniciarQuiz"); // aqui
 
 let interval;
-let minutes = 0;
+let minutes = 5;
 let seconds = 0;
 let milliseconds = 0;
 let isPaused = false;
 
-StartBtnEl.addEventListener("click", startTimer);
+IniciarQuizEl.addEventListener("click", startTimer);
 PauseBtnEl.addEventListener("click", pauseTimer);
 ResumeBtnEl.addEventListener("click", resumeTimer);
 ResetBtnEl.addEventListener("click", resetTimer);
@@ -20,16 +18,25 @@ ResetBtnEl.addEventListener("click", resetTimer);
 function startTimer() {
     interval = setInterval(() => {
         if (!isPaused) {
-            milliseconds += 10;
-
-            if (milliseconds >= 1000) {
-                seconds += Math.floor(milliseconds / 1000);
-                milliseconds %= 1000;
-            }
-
-            if (seconds >= 60) {
-                minutes += Math.floor(seconds / 60);
-                seconds %= 60;
+            // Decrementa o tempo
+            if (milliseconds > 0) {
+                milliseconds -= 10;
+            } else {
+                if (seconds > 0) {
+                    seconds -= 1;
+                    milliseconds = 990; // Defina 990 para que o tempo seja exibido como "00:59" em vez de "00:60"
+                } else {
+                    if (minutes > 0) {
+                        minutes -= 1;
+                        seconds = 59;
+                        milliseconds = 990;
+                    } else {
+                        // O cronômetro atingiu 00:00, então para o intervalo
+                        clearInterval(interval);
+                        IniciarQuizEl.style.display = "none";
+                        
+                    }
+                }
             }
 
             minutesEl.textContent = formatTime(minutes);
@@ -38,10 +45,11 @@ function startTimer() {
         }
     }, 10);
 
-    StartBtnEl.style.display = "none";
+    iniciarQuizEl.style.display = "none";
     PauseBtnEl.style.display = "block";
     ResumeBtnEl.style.display = "none";
-}
+} // modificação contagem regressiva do cronômetro 
+
 
 function pauseTimer() {
     isPaused = true;
@@ -57,7 +65,7 @@ function resumeTimer() {
 
 function resetTimer() {
     clearInterval(interval);
-    minutes = 0;
+    minutes = 5;
     seconds = 0;
     milliseconds = 0;
     isPaused = false;
