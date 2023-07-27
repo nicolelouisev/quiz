@@ -1,72 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Quiz</title>
-        <script src="./scripts/modo-escuro.js" defer></script>
-        <script src="./scripts/script.js" defer type="module"></script>
-        <link rel="stylesheet" href="css/main.css" />
-        <script src="./scripts/cronômetro.js" defer></script>
-        
-    </head>
 
-    <body>
-        <button id="modo-escuro" class="button">Modo escuro</button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <script src="./scripts/modo-escuro.js" defer></script>
+    <script src="./scripts/script.js" defer type="module"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="./scripts/cronômetro.js" defer></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
 
-        <div class="audio">
-            <audio id="myAudio" controls>
-                <source src="./audio-arquivo/sound.mp3" type="audio/mpeg" />
-                Seu navegador não possui suporte para audio, tente outro
-                navegador.</audio
-            ><br /><br />
-            <button onclick="playAudio()">Play</button>
-            <button onclick="pauseAudio()">Pause</button>
-        </div>
-        <div class="container"> <!-- cronômetro div-->
-            <h1> O tempo está passando</h1>
-            <div class="timer">
-                <div class="time" id="minutes">00</div>
-                <div class="separator">:</div>
-                <div class="time" id="seconds">00</div>
-                <div class="separator">:</div>
-                <div class="time" id="milliseconds">000</div>
-            </div>
-        </div>
-        <div class="buttons">
-            <div class="button btn" id="StartBtn">Iniciar</div>
-            <div class="button btn" id="PauseBtn">Pausar</div>
-            <div class="button btn" id="ResumeBtn">Continuar</div>
-            <div class="button btn" id="ResetBtn">Resetar</div>
+<body>
+    <button id="modo-escuro" class="button">Modo escuro</button>
+
+    <section class="audio">
+        <audio id="meuAudio">
+            <source src="./audio-arquivo/sound.mp3" type="audio/mpeg">
+            Seu navegador não possui suporte para audio, tente outro
+            navegador.
+        </audio>
+
+        <div id="div-ligado">
+            <span class="material-symbols-outlined" id="audio-ligado">volume_off</span>
         </div>
 
-        <section id="usuario">
-            <form id="formulario">
-                <h2>Quiz</h2>
-                <p>
-                    Preencha seu nome, escolha um tema e clique em Iniciar Quiz
-                    para começar.
-                </p>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" required />
+        <div class="esconde" id="div-desligado">
+            <span class="material-symbols-outlined" id="audio-desligado">volume_up</span>
+        </div>
 
-                <label for="tema">Tema:</label>
-                <select id="tema">
-                    <option value="filmes">Filmes</option>
-                    <option value="livros">Livros</option>
-                    <option value="series">Séries</option>
-                </select>
+    </section>
+    <div class="container"> <!-- cronômetro div-->
+        <h1> O tempo está passando</h1>
+        <div class="timer">
+            <div class="time" id="minutes">00</div>
+            <div class="separator">:</div>
+            <div class="time" id="seconds">00</div>
+            <div class="separator">:</div>
+            <div class="time" id="milliseconds">000</div>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="button btn" id="StartBtn">Iniciar</div>
+        <div class="button btn" id="PauseBtn">Pausar</div>
+        <div class="button btn" id="ResumeBtn">Continuar</div>
+        <div class="button btn" id="ResetBtn">Resetar</div>
+    </div>
 
-                <button type="button" id="iniciarQuiz">Iniciar Quiz</button>
-            </form>
-        </section>
+    <section id="usuario">
+        <form id="formulario">
+            <h2>Quiz</h2>
+            <p>
+                Preencha seu nome, escolha um tema e clique em Iniciar Quiz
+                para começar.
+            </p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required />
 
-        <section id="perguntas"></section>
+            <label for="tema">Tema:</label>
+            <select id="tema">
+                <option value="filmes">Filmes</option>
+                <option value="livros">Livros</option>
+                <option value="series">Séries</option>
+            </select>
 
-        <button onclick="verificarRespostas()">Verificar Respostas</button>
+            <button type="button" id="iniciarQuiz">Iniciar Quiz</button>
+        </form>
+    </section>
 
-        <section id="resultado"></section>
+    <section id="perguntas"></section>
 
-        <script src="script/script.js"></script>
-    </body>
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+
+    <section id="resultado"></section>
+
+    <script src="script/script.js"></script>
+</body>
+
 </html>

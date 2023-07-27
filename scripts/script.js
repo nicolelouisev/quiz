@@ -47,11 +47,20 @@ function criaPerguntas(vetor) {
 };
 
 
-function playAudio() {
-    let x = document.getElementById("myAudio");
-    x.play();
-}
-function pauseAudio() {
-    let x = document.getElementById("myAudio");
-    x.pause();
-}  
+const divLigado = document.querySelector("#div-ligado");
+const divDesligado = document.querySelector("#div-desligado");
+const audio = document.querySelector("#meuAudio");
+
+document.querySelector("#audio-ligado").addEventListener("click", () => {
+    audio.volume = 0.1;
+    audio.play();
+    divLigado.classList.add("esconde");
+    divDesligado.classList.remove("esconde");
+})
+
+document.querySelector("#audio-desligado").addEventListener("click", () => {
+
+    audio.pause();
+    divLigado.classList.remove("esconde");
+    divDesligado.classList.add("esconde");
+})
