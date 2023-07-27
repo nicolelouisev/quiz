@@ -3,6 +3,14 @@
     background-color: #1c1c1c;
 }
 
+.respostaCorreta {
+    background-color: green;
+}
+
+.respostaErrada {
+    background-color: red;
+}
+
 /* Css do cronômetro */
 .container {
     text-align: right;
@@ -54,7 +62,12 @@
     transform: scale(1.1);
 }
 
-#PauseBtn, #ResumeBtn {
+#PauseBtn,
+#ResumeBtn {
     display: none;
 }
 
+
+.esconde {
+    display: none;
+}
