@@ -1,7 +1,7 @@
-import {perguntasFilmes} from "./module/filmes.js";
-import {perguntasLivros} from "./module/livros.js";
-import {perguntasSeries} from "./module/series.js";
-import {totalSegundos, iniciaTimer} from "./cronometro.js";
+import { perguntasFilmes } from "./module/filmes.js";
+import { perguntasLivros } from "./module/livros.js";
+import { perguntasSeries } from "./module/series.js";
+import { totalSegundos, iniciaTimer, calculaTempo } from "./cronometro.js";
 
 const temaSelecionado = document.getElementById("tema");
 
@@ -18,9 +18,10 @@ document.getElementById("iniciarQuiz").addEventListener("click", () => {
         criaPerguntas(perguntasSeries);
         respostasCorretas(perguntasSeries);
     } else {
-        alert("Selecione um tema válido!");
+        alert('Selecione um tema válido!');
     }
     iniciaTimer();
+
 });
 
 function criaPerguntas(vetor) {
@@ -49,10 +50,9 @@ function criaPerguntas(vetor) {
         `;
     });
 
-    // perguntasSection.innerHTML += `
-
-    //         <button id="finaliza"> Finalizar </button>
-    //     `
+    perguntasSection.innerHTML += `
+            <button id="finaliza">Finalizar</button>
+        `
 
     document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
 }
@@ -119,7 +119,8 @@ function verificaRespostas() {
             desabilitaResposta(radios);
         }
     }
-    pegaInfoUsuario();
+    calculaTempo();
+    pegaInfoUsuario()
 }
 
 // Desabilita os campos (input type=radio) após as respostas serem validadas.
