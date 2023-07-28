@@ -11,8 +11,7 @@
   background-color: red;
 }
 
-Css do cronômetro
-.container {
+Css do cronômetro .container {
   text-align: right;
   margin-top: 20px;
   margin-right: 20px;
@@ -259,7 +258,8 @@ main {
   /* flex-direction: column; */
   padding: 10px;
   width: 45%;
-  font-family: Arial, sans-serif; /*  verificar a fonte */
+  font-family: Arial, sans-serif;
+  /*  verificar a fonte */
   font-size: 18px;
   border: 1px solid #ccc;
   align-items: center;
@@ -309,6 +309,7 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
+
 /* Deixar o texto em uma unica linha */
 
 button {

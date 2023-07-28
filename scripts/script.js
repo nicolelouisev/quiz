@@ -1,25 +1,30 @@
 import { perguntasFilmes } from "./module/filmes.js";
 import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
+import { totalSegundos, iniciaTimer } from "./cronometro.js";
 
 
-const temaSelecionado = document.getElementById('tema').value;
 
-document.getElementById('iniciarQuiz').addEventListener('click', () => {
 
-    if (temaSelecionado === 'filmes') {
+const temaSelecionado = document.getElementById('tema');
+
+document.getElementById('iniciarQuiz').addEventListener('click', () => { // modificação para integrar o cronômetro no iniciar quiz voltar aqui dps, nehuma modificação foi feita ainda
+
+    if (temaSelecionado.value === 'filmes') {
         criaPerguntas(perguntasFilmes);
         respostasCorretas(perguntasFilmes);
-    } else if (temaSelecionado === 'livros') {
+    } else if (temaSelecionado.value === 'livros') {
         criaPerguntas(perguntasLivros);
         respostasCorretas(perguntasLivros);
-    } else if (temaSelecionado === 'series') {
+    } else if (temaSelecionado.value === 'series') {
         criaPerguntas(perguntasSeries);
         respostasCorretas(perguntasSeries);
     } else {
         alert('Selecione um tema válido!');
     }
+    iniciaTimer();
 });
+
 
 function criaPerguntas(vetor) {
     const perguntasSection = document.querySelector("#perguntas");
@@ -48,10 +53,10 @@ function criaPerguntas(vetor) {
         `
     })
 
-    perguntasSection.innerHTML += `
-            
-            <button id="finaliza"> Finalizar </button>
-        `
+    // perguntasSection.innerHTML += `
+
+    //         <button id="finaliza"> Finalizar </button>
+    //     `
 
     document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
 };
@@ -143,5 +148,6 @@ let infoUsuario = [];
 // Captura as informações do usuário: nome, tema, acertos e erros.
 function pegaInfoUsuario() {
     const nome = document.getElementById('nome').value;
-    infoUsuario = { nome, temaSelecionado, acertos, erros };
+    infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos };
 }
+

@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>Quiz</title>
+    <title>Quiz</title>
     <script src="./scripts/modo-escuro.js" defer></script>
     <script src="./scripts/script.js" defer type="module"></script>
     <link rel="stylesheet" href="css/main.css" />
-    <script src="./scripts/cronômetro.js" defer></script>
+    <script src="./cronometro.js" type="module"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -30,49 +30,39 @@
         <div class="esconde" id="div-desligado">
             <span class="material-symbols-outlined" id="audio-desligado">volume_up</span>
         </div>
-
-    </section>
-    <div class="cronometro"> <!-- cronômetro div-->
-        <h1> O tempo está passando</h1>
-        <div class="timer">
-            <div class="time" id="minutes">00</div>
-            <div class="separator">:</div>
-            <div class="time" id="seconds">00</div>
-            <div class="separator">:</div>
-            <div class="time" id="milliseconds">000</div>
+        <div class="container">
+            <!-- cronômetro div-->
+            <h1> O tempo está passando</h1>
+            <div class="timer">
+                <div class="time" id="minutes">00</div>
+                <div class="separator">:</div>
+                <div class="time" id="seconds">00</div>
+            </div>
         </div>
-    </div>
-    <div class="buttons">
-        <div class="button btn" id="StartBtn">Iniciar</div>
-        <div class="button btn" id="PauseBtn">Pausar</div>
-        <div class="button btn" id="ResumeBtn">Continuar</div>
-        <div class="button btn" id="ResetBtn">Resetar</div>
-    </div>
 
-    <section id="usuario">
-        <form id="formulario">
-            <h2 class="titulo-principal">Quiz: Teste seu conhecimentos !</h2>
-            <br><p class="paragrafo">
-                Preencha seu nome,escolha um tema e clique em <strong>Iniciar Quiz</strong>
-                para começar.
-            </p><br>
-                    
-            <label class="label" for="nome">Nome:</label>
-            <input class="nome" type="text" id="nome" required />
-            <br> <!-- !conferir se este br pode estar aqui  --> 
-            <label for="tema">Temas:</label><br>
-            <select class="escolha-tema" id="tema">
-                <option value="filmes">Filmes</option>
-                <option value="livros">Livros</option>
-                <option value="series">Séries</option>
-            </select>
-            <br>
-            <button class="iniciarQuiz" type="button" id="iniciarQuiz">Iniciar Quiz</button>  
-            <!-- O botao Iniciar Quiz perdeu a funcionalidade no meu VS -->
-        </form>
-    </section>
+        <section id="usuario">
+            <form id="formulario">
+                <h2>Quiz</h2>
+                <p>
+                    Preencha seu nome, escolha um tema e clique em Iniciar Quiz
+                    para começar.
+                </p>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required />
 
-    <section id="perguntas"></section>
+                <label for="tema">Tema:</label>
+                <select id="tema">
+                    <option value="filmes">Filmes</option>
+                    <option value="livros">Livros</option>
+                    <option value="series">Séries</option>
+                </select>
+
+                <button type="button" id="iniciarQuiz">Iniciar Quiz</button>
+            </form>
+        </section>
+
+        <section id="perguntas"></section>
+        <button id="finaliza"> valida</button>
 
 </body>
 
