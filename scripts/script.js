@@ -1,7 +1,7 @@
 import { perguntasFilmes } from "./module/filmes.js";
 import { perguntasLivros } from "./module/livros.js";
 import { perguntasSeries } from "./module/series.js";
-import { totalSegundos,iniciaTimer } from "./cronometro.js";
+import { totalSegundos, iniciaTimer } from "./cronometro.js";
 
 
 
@@ -9,7 +9,7 @@ import { totalSegundos,iniciaTimer } from "./cronometro.js";
 const temaSelecionado = document.getElementById('tema');
 
 document.getElementById('iniciarQuiz').addEventListener('click', () => { // modificação para integrar o cronômetro no iniciar quiz voltar aqui dps, nehuma modificação foi feita ainda
-    
+
     if (temaSelecionado.value === 'filmes') {
         criaPerguntas(perguntasFilmes);
         respostasCorretas(perguntasFilmes);
@@ -21,7 +21,7 @@ document.getElementById('iniciarQuiz').addEventListener('click', () => { // modi
         respostasCorretas(perguntasSeries);
     } else {
         alert('Selecione um tema válido!');
-    } 
+    }
     iniciaTimer();
 });
 
@@ -54,7 +54,7 @@ function criaPerguntas(vetor) {
     })
 
     // perguntasSection.innerHTML += `
-            
+
     //         <button id="finaliza"> Finalizar </button>
     //     `
 
@@ -148,7 +148,6 @@ let infoUsuario = [];
 // Captura as informações do usuário: nome, tema, acertos e erros.
 function pegaInfoUsuario() {
     const nome = document.getElementById('nome').value;
-    infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros,totalSegundos };
-    console.log(infoUsuario)
+    infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos };
 }
 
