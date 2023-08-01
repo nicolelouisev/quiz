@@ -65,6 +65,7 @@ function criaPerguntas(vetor) {
             <button id="reinicia">Reiniciar</button>
         `
 
+
     document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
     const btnReinicia = document.querySelector("#reinicia");
 
@@ -111,7 +112,7 @@ let respostasUser = [];
 // Verifica se o usuário respondeu todas as perguntas e armazenas as respostas em um vetor.
 function respostasUsuario() {
     const radios = document.querySelectorAll("input[type=radio]:checked");
-
+    const btnFinaliza = document.querySelector("#finaliza");
     radios.forEach((radio) => {
         respostasUser.push(radio.id);
     });
@@ -123,6 +124,7 @@ function respostasUsuario() {
         verificaRespostas();
         resultadoSection.classList.remove("esconde");
         cronometroSection.classList.add("esconde");
+        btnFinaliza.classList.add("esconde");
     }
 
 
@@ -215,8 +217,6 @@ function pegaInfoUsuario() {
     const nome = document.getElementById("nome").value;
     let infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento) };
     infoUsuarios.push(infoUsuario);
-    console.log(infoUsuario);
-
     criaTabelaResultados();
     criaTabelaMediaAcertos(infoUsuarios);
     criaTabelaMediaErros(infoUsuarios);
@@ -244,10 +244,4 @@ function criaTabelaResultados() {
         linha.innerHTML = `<td>${usuario.nome}</td><td>${usuario.temaSelecionado}</td><td>${usuario.acertos}</td><td>${formatarTempo(usuario.totalSegundos)}</td><td>${usuario.dataHoraPreenchimento}</td>`;
         tbody.appendChild(linha);
     }
-};
-
-document.querySelector("#reiniciar").addEventListener("click", reiniciarQuiz);
-
-function reiniciarQuiz() {
-
 };
