@@ -7,6 +7,10 @@ import { criaTabelaMediaErros } from "./calculaMedia.js";
 
 
 const temaSelecionado = document.getElementById("tema");
+const usuarioSection = document.querySelector("#usuario");
+const resultadoSection = document.querySelector("#resultados");
+const cronometroSection = document.querySelector(".container");
+const perguntasSection = document.querySelector("#perguntas");
 
 document.getElementById("iniciarQuiz").addEventListener("click", () => {
     // modificação para integrar o cronômetro no iniciar quiz voltar aqui dps, nehuma modificação foi feita ainda
@@ -24,11 +28,14 @@ document.getElementById("iniciarQuiz").addEventListener("click", () => {
         alert('Selecione um tema válido!');
     }
     iniciaTimer();
+    usuarioSection.classList.add("esconde");
+    cronometroSection.classList.remove("esconde");
+    perguntasSection.classList.remove("esconde");
 
 });
 
 function criaPerguntas(vetor) {
-    const perguntasSection = document.querySelector("#perguntas");
+
 
     perguntasSection.innerHTML = "";
 
@@ -55,9 +62,23 @@ function criaPerguntas(vetor) {
 
     perguntasSection.innerHTML += `
             <button id="finaliza">Finalizar</button>
+            <button id="reinicia">Reiniciar</button>
         `
-    
+
+
     document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
+    const btnReinicia = document.querySelector("#reinicia");
+
+    btnReinicia.addEventListener("click", () => {
+        const inputNome = document.querySelector("#nome");
+        perguntasSection.classList.add("esconde");
+        usuarioSection.classList.remove("esconde");
+        cronometroSection.classList.add("esconde");
+        resultadoSection.classList.add("esconde");
+        inputNome.value = "";
+        respostasUser = [];
+        temaSelecionado.value = "filmes";
+    })
 };
 
 const divLigado = document.querySelector("#div-ligado");
@@ -91,7 +112,7 @@ let respostasUser = [];
 // Verifica se o usuário respondeu todas as perguntas e armazenas as respostas em um vetor.
 function respostasUsuario() {
     const radios = document.querySelectorAll("input[type=radio]:checked");
-
+    const btnFinaliza = document.querySelector("#finaliza");
     radios.forEach((radio) => {
         respostasUser.push(radio.id);
     });
@@ -101,8 +122,12 @@ function respostasUsuario() {
         respostasUser = [];
     } else {
         verificaRespostas();
+        resultadoSection.classList.remove("esconde");
+        cronometroSection.classList.add("esconde");
+        btnFinaliza.classList.add("esconde");
     }
-    verificaRespostas();
+
+
 };
 
 // Verifica quais respostas estão certas e quais estão erradas.
@@ -138,31 +163,41 @@ function desabilitaResposta(campos) {
 };
 
 let infoUsuarios = [
-    {nome: 'Ana',
-    temaSelecionado: 'livros',
-    acertos: 8, erros: 2,
-    totalSegundos: 187,
-    dataHoraPreenchimento: '25/07/2023 12:32'},
-    {nome: 'João',
-    temaSelecionado: 'livros',
-    acertos: 5, erros: 5,
-    totalSegundos: 233,
-    dataHoraPreenchimento: '01/07/2023 17:49'},
-    {nome: 'Gabriel',
-    temaSelecionado: 'filmes',
-    acertos: 3, erros: 7,
-    totalSegundos: 267,
-    dataHoraPreenchimento: '10/07/2023 10:15'},
-    {nome: 'Beatriz',
-    temaSelecionado: 'filmes',
-    acertos: 7, erros: 3,
-    totalSegundos: 199,
-    dataHoraPreenchimento: '22/07/2023 21:30'},
-    {nome: 'Maria',
-    temaSelecionado: 'series',
-    acertos: 10, erros: 0,
-    totalSegundos: 212,
-    dataHoraPreenchimento: '29/07/2023 08:45'}
+    {
+        nome: 'Ana',
+        temaSelecionado: 'livros',
+        acertos: 8, erros: 2,
+        totalSegundos: 187,
+        dataHoraPreenchimento: '25/07/2023 12:32'
+    },
+    {
+        nome: 'João',
+        temaSelecionado: 'livros',
+        acertos: 5, erros: 5,
+        totalSegundos: 233,
+        dataHoraPreenchimento: '01/07/2023 17:49'
+    },
+    {
+        nome: 'Gabriel',
+        temaSelecionado: 'filmes',
+        acertos: 3, erros: 7,
+        totalSegundos: 267,
+        dataHoraPreenchimento: '10/07/2023 10:15'
+    },
+    {
+        nome: 'Beatriz',
+        temaSelecionado: 'filmes',
+        acertos: 7, erros: 3,
+        totalSegundos: 199,
+        dataHoraPreenchimento: '22/07/2023 21:30'
+    },
+    {
+        nome: 'Maria',
+        temaSelecionado: 'series',
+        acertos: 10, erros: 0,
+        totalSegundos: 212,
+        dataHoraPreenchimento: '29/07/2023 08:45'
+    }
 ];
 
 function formatarDataHora(data) {
@@ -180,10 +215,8 @@ const dataHoraPreenchimento = new Date();
 // Captura as informações do usuário: nome, tema, acertos e erros.
 function pegaInfoUsuario() {
     const nome = document.getElementById("nome").value;
-    let infoUsuario = {nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento)};
+    let infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento) };
     infoUsuarios.push(infoUsuario);
-    console.log(infoUsuario);
-
     criaTabelaResultados();
     criaTabelaMediaAcertos(infoUsuarios);
     criaTabelaMediaErros(infoUsuarios);
@@ -211,17 +244,4 @@ function criaTabelaResultados() {
         linha.innerHTML = `<td>${usuario.nome}</td><td>${usuario.temaSelecionado}</td><td>${usuario.acertos}</td><td>${formatarTempo(usuario.totalSegundos)}</td><td>${usuario.dataHoraPreenchimento}</td>`;
         tbody.appendChild(linha);
     }
-};
-
-document.querySelector("#reiniciar").addEventListener("click", reiniciarQuiz);
-
-function reiniciarQuiz() {
-    respostasUser = [];
-    acertos = 0;
-    erros = 0;
-
-    document.getElementById("iniciarQuiz").disabled = false;
-
-    const perguntasSection = document.querySelector("#perguntas");
-    perguntasSection.innerHTML = "";
 };

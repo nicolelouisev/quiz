@@ -247,10 +247,6 @@ main {
   margin-right: 10px;
 }
 
-.esconde {
-  display: none;
-}
-
 /* *******************************************************************/
 /* Usuário */
 
@@ -379,10 +375,5 @@ h1 {
 
 #PauseBtn,
 #ResumeBtn {
-  display: none;
-}
-
-
-.esconde {
   display: none;
 }
