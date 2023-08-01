@@ -1,14 +1,16 @@
 let rankingGeral = {};
 
 function criaRanking(infoUsuarios) {
+    rankingGeral = {};
+
     for (let usuario of infoUsuarios) {
         const {nome, temaSelecionado, acertos} = usuario;
 
         if (!rankingGeral[temaSelecionado]) {
             rankingGeral[temaSelecionado] = [];
+        } else {
+            rankingGeral[temaSelecionado].push({nome, acertos});
         }
-
-        rankingGeral[temaSelecionado].push({nome, acertos});
     }
 
     for (let tema in rankingGeral) {
