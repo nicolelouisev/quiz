@@ -14,35 +14,57 @@
 </head>
 
 <body>
-    <button id="modo-escuro" class="button">Modo escuro</button>
+    
+    <header>
+        <h1 id="tituloQuiz">Quiz</h1>
+        <div class="audio-botao">
+            <button id="modo-escuro">Modo escuro</button>
+            <audio id="meuAudio">
+                <source src="./audio-arquivo/sound.mp3" type="audio/mpeg">
+                Seu navegador não possui suporte para audio, tente outro
+                navegador.
+            </audio>
 
-    <section class="audio">
-        <audio id="meuAudio">
-            <source src="./audio-arquivo/sound.mp3" type="audio/mpeg">
-            Seu navegador não possui suporte para audio, tente outro
-            navegador.
-        </audio>
+            <div id="div-ligado">
+                <span class="material-symbols-outlined" id="audio-ligado">volume_off</span>
+            </div>
 
-        <div id="div-ligado">
-            <span class="material-symbols-outlined" id="audio-ligado">volume_off</span>
+            <div class="esconde" id="div-desligado">
+                <span class="material-symbols-outlined" id="audio-desligado">volume_up</span>
+            </div>
         </div>
+    </header>
 
-        <div class="esconde" id="div-desligado">
-            <span class="material-symbols-outlined" id="audio-desligado">volume_up</span>
-        </div>
-        <div class="container">
-            <!-- cronômetro div-->
+    <div class="container-tema">
+
+        <!-- <section class="audio"> -->
+
+        <!-- <div class="container">
+             cronômetro div
             <h1> O tempo está passando</h1>
+            <div class="timer"> 
+                <img src="https://media.discordapp.net/attachments/1133013375488630834/1135718650553315381/trete.png" alt="">
+                <div class="teste">
+                    <div class="time" id="minutes">00</div>
+                    <div class="separator">:</div>
+                    <div class="time" id="seconds">00</div>
+                </div>
+            </div>
+        </div>  -->
+
+        <div class="cronometro">
+            <img src="https://cdn.discordapp.com/attachments/1133013375488630834/1135718650553315381/trete.png"
+                alt="Cronômetro">
             <div class="timer">
-                <div class="time" id="minutes">00</div>
+                <div id="minutes">00</div>
                 <div class="separator">:</div>
-                <div class="time" id="seconds">00</div>
+                <div id="seconds">00</div>
             </div>
         </div>
 
         <section id="usuario">
             <form id="formulario">
-                <h2>Quiz</h2>
+                <h2 id="">Quiz</h2>
                 <p>
                     Preencha seu nome, escolha um tema e clique em Iniciar Quiz
                     para começar.
@@ -62,6 +84,8 @@
         </section>
 
         <section id="perguntas"></section>
+
+    </div>
 
 </body>
 
