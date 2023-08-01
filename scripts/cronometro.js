@@ -55,7 +55,6 @@ export function calculaTempo() {
 
     // Convertendo o tempo atual para segundos e armazenando no vetor
     totalSegundos = 300 - (minutos * 60 + segundos);
-    console.log(totalSegundos)
 
 }
 function formatTime(time) {
