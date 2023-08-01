@@ -4,6 +4,7 @@ import { perguntasSeries } from "./module/series.js";
 import { totalSegundos, iniciaTimer, calculaTempo } from "./cronometro.js";
 import { criaTabelaMediaAcertos } from "./calculaMedia.js";
 import { criaTabelaMediaErros } from "./calculaMedia.js";
+import { criaTabelaRanking } from "./ranking.js";
 
 
 const temaSelecionado = document.getElementById("tema");
@@ -187,6 +188,7 @@ function pegaInfoUsuario() {
     criaTabelaResultados();
     criaTabelaMediaAcertos(infoUsuarios);
     criaTabelaMediaErros(infoUsuarios);
+    criaTabelaRanking(infoUsuarios);
 };
 
 
