@@ -87,6 +87,7 @@ function respostasCorretas(perguntas) {
 };
 
 let respostasUser = [];
+
 // Verifica se o usuário respondeu todas as perguntas e armazenas as respostas em um vetor.
 function respostasUsuario() {
     const radios = document.querySelectorAll("input[type=radio]:checked");
@@ -95,12 +96,12 @@ function respostasUsuario() {
         respostasUser.push(radio.id);
     });
 
-    // if (respostasUser.length < 10) {
-    //     alert("Responda todas as perguntas!");
-    //     respostasUser = [];
-    // } else {
-    //     verificaRespostas();
-    // }
+    if (respostasUser.length < 10) {
+        alert("Responda todas as perguntas!");
+        respostasUser = [];
+    } else {
+        verificaRespostas();
+    }
     verificaRespostas();
 };
 
