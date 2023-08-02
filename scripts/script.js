@@ -46,17 +46,28 @@ function criaPerguntas(vetor) {
             <div class="divPergunta">
                 <h3>${pergunta.pergunta}</h3>
 
-                <input type="radio" name="resposta${i}" id="a">
-                A - ${pergunta.respostas.a}
+                <div class="inputs">
+                    <div>
+                        <input type="radio" name="resposta${i}" id="a">
+                        <label> A - ${pergunta.respostas.a} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="b">
-                B - ${pergunta.respostas.b}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="b">
+                        <label> B - ${pergunta.respostas.b} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="c">
-                C - ${pergunta.respostas.c}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="c">
+                        <label> C - ${pergunta.respostas.c} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="d">
-                D - ${pergunta.respostas.d}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="d">
+                        <label> D - ${pergunta.respostas.d} </label>
+                    </div>
+
+                </div>        
             </div>
         `;
     });
