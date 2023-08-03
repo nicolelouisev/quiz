@@ -4,13 +4,13 @@ function criaRanking(infoUsuarios) {
     rankingGeral = {};
 
     for (let usuario of infoUsuarios) {
-        const {nome, temaSelecionado, acertos} = usuario;
+        const { nome, temaSelecionado, acertos } = usuario;
 
         if (!rankingGeral[temaSelecionado]) {
             rankingGeral[temaSelecionado] = [];
-        } else {
-            rankingGeral[temaSelecionado].push({nome, acertos});
         }
+        rankingGeral[temaSelecionado].push({ nome, acertos });
+
     }
 
     for (let tema in rankingGeral) {
@@ -34,7 +34,7 @@ function criaTabela(tema, infoUsuarios) {
 
 export function criaTabelaRanking(infoUsuarios) {
     criaRanking(infoUsuarios);
-    criaTabela("livros", infoUsuarios);
     criaTabela("filmes", infoUsuarios);
+    criaTabela("livros", infoUsuarios);
     criaTabela("series", infoUsuarios);
 }

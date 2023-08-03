@@ -10,9 +10,6 @@
 body {
   height: 100%;
   font-family: 'Acme', sans-serif;
-  /* background-image: url('https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
   background-size: cover;
 }
 
@@ -49,7 +46,7 @@ header {
   margin-top: 10px;
 }
 
-.audio-botao #modo-escuro {
+#modo-escuro {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -63,7 +60,7 @@ header {
   transition: 0.5s;
 }
 
-.audio-botao #modo-escuro:hover{
+#modo-escuro:hover {
   box-shadow: 5px 5px 20px black;
   transition: 0.5s;
 }
@@ -77,10 +74,7 @@ header {
 
 /* ------- TUDO SOBRE MODO ESCURO ------ */
 
-#tema {
-  color: #000000;
-  margin-bottom: 10px;
-}
+
 
 .dark {
   color: #000000;
@@ -91,21 +85,27 @@ header {
   background-image: url('https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?q=10&h=200');
 }
 
+.dark #tituloQuiz {
+  color: white;
+}
+
 .dark #modo-escuro {
   background-color: #121212;
   color: aliceblue;
 }
 
-
-.perguntas-container {
-  margin-bottom: var(--2x);
-  border: 1px solid var(--contraste-light);
-  border-radius: var(--3x);
-  padding: var(--2x);
+.dark .audio-botao {
+  color: white;
 }
 
-.perguntaDark {
-  background-color: #1c1c1c;
+.dark h1,
+.dark h2 {
+  color: white;
+}
+
+.dark #usuario p,
+.dark #usuario label {
+  color: white;
 }
 
 /* ------- TUDO SOBRE MODO ESCURO ------ */
@@ -116,31 +116,45 @@ header {
 
 /* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
 
+#tema,
+#nome {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#tema {
+  width: 150px;
+}
+
+#nome {
+  width: 300px;
+}
+
 #usuario {
-  height: 900px;
   text-align: center;
 }
 
-#usuario h2{
+#usuario h2 {
   margin-top: 60px;
   margin-bottom: 40px;
   font-size: 60px;
 }
 
-#usuario p{
+#usuario p {
   font-size: 35px;
   margin-bottom: 30px;
 }
 
-.label-input{
+.label-input {
   font-size: 30px;
 }
 
-.label-input label{
+.label-input label {
   margin: 0 10px;
 }
 
-#iniciarQuiz{
+#iniciarQuiz {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -159,6 +173,8 @@ header {
   transition: 0.5s;
 }
 
+
+
 /* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
 
 
@@ -169,10 +185,11 @@ header {
 
 /* Estilo para o container do cronômetro */
 .cronometro {
-  position: absolute;
+  position: fixed;
   top: 220px;
   right: 20px;
   width: 200px;
+
   /* Ajuste o tamanho do cronômetro conforme desejado */
 }
 
@@ -182,6 +199,7 @@ header {
   height: auto;
   display: block;
   position: relative;
+
 }
 
 /* Estilo para o timer dentro do cronômetro */
@@ -208,15 +226,17 @@ header {
 
 #perguntas {
   padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .divPergunta {
   padding: 20px 20px;
-  margin: 20px 0;
-  width: 1000px;
-  border: 1px solid black;
-  box-shadow: 10px 5px 30px black;
-  background-image: url('https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80');
+  margin: 30px 0;
+  width: 70%;
+  box-shadow: 10px 10px 20px black;
+  background-color: #F2D700;
 }
 
 .divPergunta h3 {
@@ -250,6 +270,13 @@ header {
   background-color: red;
 }
 
+.btnPerguntas {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
 /* ------- TUDO SOBRE PERGUNTAS ------ */
 
 
@@ -268,12 +295,12 @@ header {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 10px 10px;
   border-radius: 30px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 19px;
-  margin-right: 20px;
-  margin-top: 20px;
+  font-size: 22px;
+  width: 150px;
+  height: 60px;
+  margin: 20px 0;
 }
 
 #finaliza:hover {
@@ -291,10 +318,12 @@ header {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 10px 10px;
   border-radius: 30px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 19px;
+  font-size: 22px;
+  width: 150px;
+  height: 60px;
+  margin: 20px 0;
 }
 
 #reinicia:hover {
@@ -310,43 +339,53 @@ header {
 
 /* ------- TUDO SOBRE RANKING ------ */
 
-#resultados{
+#resultados {
   text-align: center;
 }
 
 .tabelaEstilos {
   transition: 0.3s;
   transform: scale(0.9);
-  border: 1px solid black;
 }
 
-.tabelaEstilos:hover{
+.tabelaEstilos:hover {
   transform: scale(1);
   box-shadow: 6px 6px 30px black;
 }
 
-.tabelaEstilos, 
-.tabelaEstilos th, 
-.tabelaEstilos td, 
-.tabelaEstilos tr{
-  /* background-color:#f1c40f; */
+.tabelaEstilos,
+.tabelaEstilos th,
+.tabelaEstilos td,
+.tabelaEstilos tr {
   padding: 20px;
   text-align: center;
   background-color: #F2D700;
-  margin: auto;
   border-collapse: collapse;
   font-size: 30px;
 }
 
-#resultados div{
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-
-#resultados{
+#resultados {
   margin-top: 30px;
   font-size: 30px;
 
 }
+
+#tabela-resultados {
+  margin: auto;
+}
+
+.tabelas-medias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tabelas-rankings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
 
 /* ------- TUDO SOBRE RANKING ------ */
