@@ -73,8 +73,8 @@ function criaPerguntas(vetor) {
     });
 
     perguntasSection.innerHTML += `
-            <button id="finaliza">Finalizar</button>
-            <button id="reinicia">Reiniciar</button>
+                <button id="finaliza">Finalizar</button>
+                <button id="reinicia">Reiniciar</button> 
         `
 
 

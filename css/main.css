@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Edu+SA+Beginner:wght@400;700&family=Fjalla+One&family=Inconsolata:wght@200&family=Lobster&family=Shadows+Into+Light&family=Victor+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Edu+SA+Beginner:wght@400;700&family=Fjalla+One&family=Inconsolata:wght@200&family=Lobster&family=Roboto:wght@400;500&family=Shadows+Into+Light&family=Victor+Mono:wght@100&display=swap');
 
-*{
+* {
   box-sizing: border-box;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
   --tamanhoFonteTitulo: 28px
 }
 
-/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
-
-body{
+body {
   height: 100%;
   font-family: 'Acme', sans-serif;
   /* background-image: url('https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
@@ -18,28 +16,31 @@ body{
   background-size: cover;
 }
 
-header{
+
+
+
+/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+
+header {
   padding-top: 20px;
   background-image: url('https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80');
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: 3px solid black;
 }
 
-.container-tema{
-}
-
-#tituloQuiz{
+#tituloQuiz {
   text-align: center;
-  font-size: 60px;
+  font-size: 100px;
   font-family: 'Lobster', cursive;
   color: rgba(0, 0, 0, 0.932);
 }
 
-.esconde{
+.esconde {
   display: none;
 }
 
-.audio-botao{
+.audio-botao {
   display: flex;
   justify-content: space-around;
   cursor: pointer;
@@ -48,7 +49,7 @@ header{
   margin-top: 10px;
 }
 
-.audio-botao #modo-escuro{
+.audio-botao #modo-escuro {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -59,9 +60,18 @@ header{
   background-color: #fbef0c;
   color: #000000;
   margin-bottom: 15px;
+  transition: 0.5s;
+}
+
+.audio-botao #modo-escuro:hover{
+  box-shadow: 5px 5px 20px black;
+  transition: 0.5s;
 }
 
 /* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+
+
+
 
 
 
@@ -77,11 +87,11 @@ header{
   background-color: #1c1c1c;
 }
 
-.dark header{
+.dark header {
   background-image: url('https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?q=10&h=200');
 }
 
-.dark #modo-escuro{
+.dark #modo-escuro {
   background-color: #121212;
   color: aliceblue;
 }
@@ -94,11 +104,64 @@ header{
   padding: var(--2x);
 }
 
-.perguntaDark{
+.perguntaDark {
   background-color: #1c1c1c;
 }
 
 /* ------- TUDO SOBRE MODO ESCURO ------ */
+
+
+
+
+
+/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
+
+#usuario {
+  height: 900px;
+  text-align: center;
+}
+
+#usuario h2{
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+#usuario p{
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.label-input{
+  font-size: 30px;
+}
+
+.label-input label{
+  margin: 0 10px;
+}
+
+#iniciarQuiz{
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  background-color: #fbef0c;
+  color: #000000;
+  margin-left: 25px;
+  transition: 0.5s;
+}
+
+#iniciarQuiz:hover {
+  box-shadow: 5px 5px 20px black;
+  transition: 0.5s;
+}
+
+/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
+
+
 
 
 
@@ -107,9 +170,10 @@ header{
 /* Estilo para o container do cronômetro */
 .cronometro {
   position: absolute;
-  top: 155px;
+  top: 220px;
   right: 20px;
-  width: 200px; /* Ajuste o tamanho do cronômetro conforme desejado */
+  width: 200px;
+  /* Ajuste o tamanho do cronômetro conforme desejado */
 }
 
 /* Estilo para a imagem do cronômetro */
@@ -124,7 +188,8 @@ header{
 .cronometro .timer {
   font-family: 'Victor Mono', monospace;
   margin-top: 17px;
-  font-size: 26px; /* Ajustado para diminuir em 3px */
+  font-size: 26px;
+  /* Ajustado para diminuir em 3px */
   display: flex;
   align-items: center;
   position: absolute;
@@ -137,32 +202,15 @@ header{
 
 
 
-/* ------- TUDO SOBRE PERGUNTAS ------ */
 
-.respostaCorreta{
-  background-color: rgba(11, 152, 11, 0.952);
-}
-
-.respostaErrada{
-  background-color: red;
-}
 
 /* ------- TUDO SOBRE PERGUNTAS ------ */
 
-.container-tema{
-  background-image: url('');
-  overflow: hidden;
-}
-
-#usuario{
-  height: 900px;
-}
-
-#perguntas{
+#perguntas {
   padding: 60px;
 }
 
-.divPergunta{
+.divPergunta {
   padding: 20px 20px;
   margin: 20px 0;
   width: 1000px;
@@ -171,25 +219,134 @@ header{
   background-image: url('https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80');
 }
 
-.divPergunta h3{
+.divPergunta h3 {
   padding-bottom: 10px;
-  font-size:  var(--tamanhoFonteTitulo);
+  font-size: var(--tamanhoFonteTitulo);
 }
 
-.divPergunta label{
+.divPergunta label {
   max-width: max-content;
   font-size: 23px
 }
 
-.inputs{
+.inputs {
   display: flex;
   flex-direction: column;
 }
 
-.divPergunta div{
+.divPergunta div {
   padding: 10px 0 0;
 }
 
-.divPergunta input{
+.divPergunta input {
   margin-right: 10px;
 }
+
+.respostaCorreta {
+  background-color: rgba(11, 152, 11, 0.952);
+}
+
+.respostaErrada {
+  background-color: red;
+}
+
+/* ------- TUDO SOBRE PERGUNTAS ------ */
+
+
+
+
+
+/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
+
+#finaliza {
+  border-color: #f1c40f;
+  color: black;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px 10px;
+  border-radius: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 19px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+#finaliza:hover {
+  background-position: 0;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#reinicia {
+  border-color: #f1c40f;
+  color: black;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px 10px;
+  border-radius: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 19px;
+}
+
+#reinicia:hover {
+  background-position: 0;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
+
+
+
+
+
+/* ------- TUDO SOBRE RANKING ------ */
+
+#resultados{
+  text-align: center;
+}
+
+.tabelaEstilos {
+  transition: 0.3s;
+  transform: scale(0.9);
+  border: 1px solid black;
+}
+
+.tabelaEstilos:hover{
+  transform: scale(1);
+  box-shadow: 6px 6px 30px black;
+}
+
+.tabelaEstilos, 
+.tabelaEstilos th, 
+.tabelaEstilos td, 
+.tabelaEstilos tr{
+  /* background-color:#f1c40f; */
+  padding: 20px;
+  text-align: center;
+  background-color: #F2D700;
+  margin: auto;
+  border-collapse: collapse;
+  font-size: 30px;
+}
+
+#resultados div{
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+#resultados{
+  margin-top: 30px;
+  font-size: 30px;
+
+}
+
+/* ------- TUDO SOBRE RANKING ------ */
