@@ -30,7 +30,7 @@ export let infoUsuarios = [
     {
         nome: 'Maria',
         temaSelecionado: 'series',
-        acertos: 10, erros: 0,
+        acertos: 6, erros: 4,
         totalSegundos: 212,
         dataHoraPreenchimento: '29/07/2023 08:45'
     }

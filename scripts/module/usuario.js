@@ -9,20 +9,34 @@ export const temaSelecionado = document.getElementById("tema");
 
 
 export function iniciaQuiz() {
-    if (temaSelecionado.value === "filmes") {
-        criaPerguntas(perguntasFilmes);
-        respostasCorretas(perguntasFilmes);
-    } else if (temaSelecionado.value === "livros") {
-        criaPerguntas(perguntasLivros);
-        respostasCorretas(perguntasLivros);
-    } else if (temaSelecionado.value === "series") {
-        criaPerguntas(perguntasSeries);
-        respostasCorretas(perguntasSeries);
+    const inputNome = document.querySelector("#nome").value;
+    if (inputNome.trim() != "") {
+        if (temaSelecionado.value === "filmes") {
+            criaPerguntas(perguntasFilmes);
+            respostasCorretas(perguntasFilmes);
+            iniciaTimer();
+            usuarioSection.classList.add("esconde");
+            cronometroSection.classList.remove("esconde");
+            perguntasSection.style.display = "flex";
+
+        } else if (temaSelecionado.value === "livros") {
+            criaPerguntas(perguntasLivros);
+            respostasCorretas(perguntasLivros);
+            iniciaTimer();
+            usuarioSection.classList.add("esconde");
+            cronometroSection.classList.remove("esconde");
+            perguntasSection.style.display = "flex";
+
+        } else if (temaSelecionado.value === "series") {
+            criaPerguntas(perguntasSeries);
+            respostasCorretas(perguntasSeries);
+            iniciaTimer();
+            usuarioSection.classList.add("esconde");
+            cronometroSection.classList.remove("esconde");
+            perguntasSection.style.display = "flex";
+        }
     } else {
-        alert('Selecione um tema válido!');
+        alert('Insira um nome!');
     }
-    iniciaTimer();
-    usuarioSection.classList.add("esconde");
-    cronometroSection.classList.remove("esconde");
-    perguntasSection.style.display = "flex";
+
 }
