@@ -16,7 +16,6 @@ function criaRanking(infoUsuarios) {
     for (let tema in rankingGeral) {
         rankingGeral[tema].sort((a, b) => b.acertos - a.acertos);
     }
-    console.log(rankingGeral);
 }
 
 function criaTabela(tema, infoUsuarios) {

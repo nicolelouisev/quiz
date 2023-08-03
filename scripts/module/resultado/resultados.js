@@ -6,8 +6,6 @@ import { formatarDataHora, formatarTempo } from "../../utils/utils.js";
 import { criaTabelaMediaAcertos, criaTabelaMediaErros } from "./calculaMedia.js";
 import { criaTabelaRanking } from "./ranking.js";
 
-console.log(infoUsuarios)
-
 const dataHoraPreenchimento = new Date();
 
 // Captura as informações do usuário

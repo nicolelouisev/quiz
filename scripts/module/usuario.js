@@ -24,5 +24,5 @@ export function iniciaQuiz() {
     iniciaTimer();
     usuarioSection.classList.add("esconde");
     cronometroSection.classList.remove("esconde");
-    perguntasSection.classList.remove("esconde");
+    perguntasSection.style.display = "flex";
 }

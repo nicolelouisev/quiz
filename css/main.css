@@ -1,379 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Edu+SA+Beginner:wght@400;700&family=Fjalla+One&family=Inconsolata:wght@200&family=Lobster&family=Roboto:wght@400;500&family=Shadows+Into+Light&family=Victor+Mono:wght@100&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --tamanhoFonteTitulo: 28px
+}
+
+body {
+  height: 100%;
+  font-family: 'Acme', sans-serif;
+  background-size: cover;
+}
+
+
+
+
+/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+
+header {
+  padding-top: 20px;
+  background-image: url('https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 3px solid black;
+}
+
+#tituloQuiz {
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Lobster', cursive;
+  color: rgba(0, 0, 0, 0.932);
+}
+
+.esconde {
+  display: none;
+}
+
+.audio-botao {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#modo-escuro {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  background-color: #fbef0c;
+  color: #000000;
+  margin-bottom: 15px;
+  transition: 0.5s;
+}
+
+#modo-escuro:hover {
+  box-shadow: 5px 5px 20px black;
+  transition: 0.5s;
+}
+
+/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+
+
+
+
+
+
+/* ------- TUDO SOBRE MODO ESCURO ------ */
+
+
+
 .dark {
-  color: #ffff;
+  color: #000000;
   background-color: #1c1c1c;
 }
 
+.dark header {
+  background-image: url('https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?q=10&h=200');
+}
+
+.dark #tituloQuiz {
+  color: white;
+}
+
+.dark #modo-escuro {
+  background-color: #121212;
+  color: aliceblue;
+}
+
+.dark .audio-botao {
+  color: white;
+}
+
+.dark h1,
+.dark h2 {
+  color: white;
+}
+
+.dark #usuario p,
+.dark #usuario label {
+  color: white;
+}
+
+/* ------- TUDO SOBRE MODO ESCURO ------ */
+
+
+
+
+
+/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
+
+#tema,
+#nome {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#tema {
+  width: 150px;
+}
+
+#nome {
+  width: 300px;
+}
+
+#usuario {
+  text-align: center;
+}
+
+#usuario h2 {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+#usuario p {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.label-input {
+  font-size: 30px;
+}
+
+.label-input label {
+  margin: 0 10px;
+}
+
+#iniciarQuiz {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  background-color: #fbef0c;
+  color: #000000;
+  margin-left: 25px;
+  transition: 0.5s;
+}
+
+#iniciarQuiz:hover {
+  box-shadow: 5px 5px 20px black;
+  transition: 0.5s;
+}
+
+
+
+/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
+
+
+
+
+
+/* ------- TUDO SOBRE CRONÔMETRO ------ */
+
+/* Estilo para o container do cronômetro */
+.cronometro {
+  position: fixed;
+  top: 220px;
+  right: 20px;
+  width: 200px;
+
+  /* Ajuste o tamanho do cronômetro conforme desejado */
+}
+
+/* Estilo para a imagem do cronômetro */
+.cronometro img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+
+}
+
+/* Estilo para o timer dentro do cronômetro */
+.cronometro .timer {
+  font-family: 'Victor Mono', monospace;
+  margin-top: 17px;
+  font-size: 26px;
+  /* Ajustado para diminuir em 3px */
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ------- TUDO SOBRE CRONÔMETRO ------ */
+
+
+
+
+
+/* ------- TUDO SOBRE PERGUNTAS ------ */
+
+#perguntas {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divPergunta {
+  padding: 20px 20px;
+  margin: 30px 0;
+  width: 70%;
+  box-shadow: 10px 10px 20px black;
+  background-color: #F2D700;
+}
+
+.divPergunta h3 {
+  padding-bottom: 10px;
+  font-size: var(--tamanhoFonteTitulo);
+}
+
+.divPergunta label {
+  max-width: max-content;
+  font-size: 23px
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.divPergunta div {
+  padding: 10px 0 0;
+}
+
+.divPergunta input {
+  margin-right: 10px;
+}
+
 .respostaCorreta {
-  background-color: green;
+  background-color: rgba(11, 152, 11, 0.952);
 }
 
 .respostaErrada {
   background-color: red;
 }
 
-Css do cronômetro .container {
-  text-align: right;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-.container h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #172953;
-}
-
-.timer {
-  font-size: 55px;
-  font-weight: bold;
-  color: #333;
-}
-
-.timer .time {
-  min-width: 60px;
-}
-
-.separator {
-  padding: 0 10px;
-  color: #525763;
-}
-
-.buttons {
+.btnPerguntas {
+  width: 70%;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 20px;
+  justify-content: space-evenly;
+
 }
 
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
+/* ------- TUDO SOBRE PERGUNTAS ------ */
+
+
+
+
+
+/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
+
+#finaliza {
+  border-color: #f1c40f;
+  color: black;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 30px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  transition: all 0.2s ease-in-out;
-  background-color: #175cff;
-  color: #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  width: 150px;
+  height: 60px;
+  margin: 20px 0;
 }
 
-.button:hover {
-  transform: scale(1.1);
+#finaliza:hover {
+  background-position: 0;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-#PauseBtn,
-#ResumeBtn {
-  display: none;
+#reinicia {
+  border-color: #f1c40f;
+  color: black;
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  width: 150px;
+  height: 60px;
+  margin: 20px 0;
 }
 
-
-.esconde {
-  display: none;
+#reinicia:hover {
+  background-position: 0;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Estilização  */
+/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
 
-/* Import */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,300&display=swap');
 
-/* Geral */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* ------- TUDO SOBRE RANKING ------ */
+
+#resultados {
+  text-align: center;
 }
 
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: rgb(209, 231, 216);
-  font-family: 'Roboto Mono', monospace;
-  /* Verificar a fonte */
-  position: relative;
+.tabelaEstilos {
+  transition: 0.3s;
+  transform: scale(0.9);
 }
 
-header {
-  height: 10%;
-  display: flex;
-  justify-content: space-around;
+.tabelaEstilos:hover {
+  transform: scale(1);
+  box-shadow: 6px 6px 30px black;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-start;
-  margin-top: 5%;
-}
-
-/* ------------------------------------------------------------------ */
-/* Título Principal: Quiz */
-
-.titulo-principal {
+.tabelaEstilos,
+.tabelaEstilos th,
+.tabelaEstilos td,
+.tabelaEstilos tr {
+  padding: 20px;
+  text-align: center;
+  background-color: #F2D700;
+  border-collapse: collapse;
   font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 50px;
-  height: 10vh;
-  width: 100vw;
-  background-color: blue;
-  color: rgb(255, 255, 255);
+}
+
+#resultados {
+  margin-top: 30px;
+  font-size: 30px;
+
+}
+
+#tabela-resultados {
+  margin: auto;
+}
+
+.tabelas-medias {
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 25px;
+  flex-wrap: wrap;
 }
 
-/* Perguntas e Respostas*/
-
-.perguntas {
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  align-items: start;
-  width: 50%;
-  overflow-y: scroll;
-  border: 1px solid whitesmoke;
-}
-
-#respostas {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background-color: white;
-}
-
-#resposta:hover {
-  background-color: white;
-}
-
-#resposta-selecionada {
-  background-color: rgb(0, 0, 236);
-  color: white;
-}
-
-#lista-perguntas {
-  width: 100%;
-}
-
-#tema {
-  color: #000000;
-  margin-bottom: 10px;
-}
-
-.perguntas-container {
-  margin-bottom: var(--2x);
-  border: 1px solid var(--contraste-light);
-  border-radius: var(--3x);
-  padding: var(--2x);
-}
-
-.lista-organizacao {
+.tabelas-rankings {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.lista-organizacao label {
-  color: var(--texto-light);
-}
-
-.separate {
-  margin: var(--1x) var(--2x);
-  display: flex;
-  gap: var(--2x);
-}
-
-*/
-/* ------------------------------------------------------------------ */
-/* Botões */
-
-#iniciarQuiz {
-  display: inline-block;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  font-weight: bold;
-  color: red;
-  background-color: whitesmoke;
-  cursor: pointer;
-
-}
-
-#iniciarQuiz :hover {
-  color: var(--contraste-light);
-  border: 1px solid black;
-  background-color: rgb(34, 12, 228);
-}
-
-.button-btn {
-  width: 160px;
-  padding: var(--4x);
-  color: var(--secundaria-light);
-  background-color: var(--contraste-light);
-  border: none;
-  border-radius: var(--6x);
-  cursor: pointer;
-  transition: 0.5s;
-  font-weight: bold;
-}
-
-/* *******************************************************************/
-
-.audio {
-  background-color: red;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
+  flex-wrap: wrap;
 
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  /* fonte foi pesquisada na internet - verificar  */
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-#div-ligado {
-  margin-right: 10px;
-}
-
-/* *******************************************************************/
-/* Usuário */
-
-#formulario {
-  /* flex-direction: column; */
-  padding: 10px;
-  width: 45%;
-  font-family: Arial, sans-serif;
-  /*  verificar a fonte */
-  font-size: 18px;
-  border: 1px solid #ccc;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.paragrafo {
-  font-size: 18px;
-  width: 100%;
-}
-
-.label {
-  display: block;
-  margin-bottom: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  size: 15%;
-  cursor: pointer;
-}
-
-.escolha-tema {
-  font-size: 14px;
-  width: 45%;
-  padding: 12px 16px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.nome {
-  background-color: #53173f;
-  width: 45%;
-  padding: 12px 16px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.iniciarQuiz {
-  background-color: rgb(40, 85, 49);
-  color: white;
-  padding: 14px 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Deixar o texto em uma unica linha */
-
-button {
-  background-color: #73df77;
-  color: rgb(9, 34, 14);
-  text-decoration: solid;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* *******************************************************************/
-/* Cronometro  // os botoes iniciar e resetar precisam finalizar a estilização - deixar*/
-.cronometro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.timer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.time {
-  font-size: 3rem;
-}
-
-.separator {
-  font-size: 3rem;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 20px;
-}
-
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  transition: all 0.2s ease-in-out;
-  background-color: #175cff;
-  color: #fff;
-}
-
-.button:hover {
-  transform: scale(1.1);
-}
-
-#PauseBtn,
-#ResumeBtn {
-  display: none;
-}
+/* ------- TUDO SOBRE RANKING ------ */

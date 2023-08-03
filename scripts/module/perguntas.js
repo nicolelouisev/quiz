@@ -3,7 +3,7 @@ import { pegaInfoUsuario } from "./resultado/resultados.js";
 import { calculaTempo } from "./cronometro.js";
 
 const resultadoSection = document.querySelector("#resultados");
-export const cronometroSection = document.querySelector(".container");
+export const cronometroSection = document.querySelector(".cronometro");
 export const perguntasSection = document.querySelector("#perguntas");
 
 
@@ -19,29 +19,41 @@ export function criaPerguntas(vetor) {
 
     vetor.forEach((pergunta, i) => {
         perguntasSection.innerHTML += `
-
             <div class="divPergunta">
                 <h3>${pergunta.pergunta}</h3>
 
-                <input type="radio" name="resposta${i}" id="a">
-                A - ${pergunta.respostas.a}
+                <div class="inputs">
+                    <div>
+                        <input type="radio" name="resposta${i}" id="a">
+                        <label> A - ${pergunta.respostas.a} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="b">
-                B - ${pergunta.respostas.b}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="b">
+                        <label> B - ${pergunta.respostas.b} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="c">
-                C - ${pergunta.respostas.c}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="c">
+                        <label> C - ${pergunta.respostas.c} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="d">
-                D - ${pergunta.respostas.d}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="d">
+                        <label> D - ${pergunta.respostas.d} </label>
+                    </div>
+
+                </div>        
             </div>
         `;
     });
 
     perguntasSection.innerHTML += `
+        <div class="btnPerguntas">
             <button id="finaliza">Finalizar</button>
             <button id="reinicia">Reiniciar</button>
-        `
+        </div>
+    `
     document.querySelector("#finaliza").addEventListener("click", respostasUsuario);
     document.querySelector("#reinicia").addEventListener("click", reiniciaQuiz);
 }
@@ -109,13 +121,16 @@ function desabilitaResposta(campos) {
 };
 
 // Funcionalidade do botão de reiniciar.
-function reiniciaQuiz() {
+export function reiniciaQuiz() {
     const inputNome = document.querySelector("#nome");
-    perguntasSection.classList.add("esconde");
+
+    perguntasSection.style.display = "none";
     usuarioSection.classList.remove("esconde");
     cronometroSection.classList.add("esconde");
     resultadoSection.classList.add("esconde");
     inputNome.value = "";
-    respostasUser = [];
     temaSelecionado.value = "filmes";
+    respostasUser = [];
+    acertos = 0;
+    erros = 0;
 }
