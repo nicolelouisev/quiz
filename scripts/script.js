@@ -10,7 +10,7 @@ import { criaTabelaRanking } from "./ranking.js";
 const temaSelecionado = document.getElementById("tema");
 const usuarioSection = document.querySelector("#usuario");
 const resultadoSection = document.querySelector("#resultados");
-const cronometroSection = document.querySelector(".container");
+const cronometroSection = document.querySelector(".cronometro");
 const perguntasSection = document.querySelector("#perguntas");
 
 document.getElementById("iniciarQuiz").addEventListener("click", () => {
@@ -46,24 +46,35 @@ function criaPerguntas(vetor) {
             <div class="divPergunta">
                 <h3>${pergunta.pergunta}</h3>
 
-                <input type="radio" name="resposta${i}" id="a">
-                A - ${pergunta.respostas.a}
+                <div class="inputs">
+                    <div>
+                        <input type="radio" name="resposta${i}" id="a">
+                        <label> A - ${pergunta.respostas.a} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="b">
-                B - ${pergunta.respostas.b}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="b">
+                        <label> B - ${pergunta.respostas.b} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="c">
-                C - ${pergunta.respostas.c}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="c">
+                        <label> C - ${pergunta.respostas.c} </label>
+                    </div>
 
-                <input type="radio" name="resposta${i}" id="d">
-                D - ${pergunta.respostas.d}
+                    <div>
+                        <input type="radio" name="resposta${i}" id="d">
+                        <label> D - ${pergunta.respostas.d} </label>
+                    </div>
+
+                </div>        
             </div>
         `;
     });
 
     perguntasSection.innerHTML += `
-            <button id="finaliza">Finalizar</button>
-            <button id="reinicia">Reiniciar</button>
+                <button id="finaliza">Finalizar</button>
+                <button id="reinicia">Reiniciar</button> 
         `
 
 
