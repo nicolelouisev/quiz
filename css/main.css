@@ -389,3 +389,10 @@ header {
 
 
 /* ------- TUDO SOBRE RANKING ------ */
+
+/* -------- ESTILIZAÇÃO DO FOOTER ------ */
+footer {
+  text-align: right;
+  color: #3a3733
+}
+/* -------- ESTILIZAÇÃO DO FOOTER ------  */
