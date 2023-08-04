@@ -344,15 +344,3 @@ header {
 }
 
 /* ------- FINALIZA TUDO SOBRE RANKING ------ */
-
-/* -------- ESTILIZAÇÃO DO FOOTER ------ */
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  padding: 20px 20px 10px;
-  text-align: right;
-  color: #3a3733;
-  font-size: 15px;
-}
-/* -------- ESTILIZAÇÃO DO FOOTER ------  */
