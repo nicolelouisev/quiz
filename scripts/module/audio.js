@@ -4,6 +4,7 @@ const audio = document.querySelector("#meuAudio");
 
 export function ligaAudio() {
     audio.volume = 0.1;
+    audio.loop = true;
     audio.play();
     divLigado.classList.add("esconde");
     divDesligado.classList.remove("esconde");

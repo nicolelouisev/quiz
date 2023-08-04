@@ -231,6 +231,10 @@ header {
   align-items: center;
 }
 
+#perguntas h1 {
+  font-size: 40px;
+}
+
 .divPergunta {
   padding: 20px 20px;
   margin: 30px 0;
@@ -285,7 +289,9 @@ header {
 
 /* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
 
-#finaliza {
+#reinicia,
+#finaliza,
+#reiniciaResultado {
   border-color: #f1c40f;
   color: black;
   background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
@@ -303,30 +309,9 @@ header {
   margin: 20px 0;
 }
 
-#finaliza:hover {
-  background-position: 0;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-#reinicia {
-  border-color: #f1c40f;
-  color: black;
-  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
-  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
-  background-position: 100%;
-  background-size: 400%;
-  -webkit-transition: background 300ms ease-in-out;
-  transition: background 300ms ease-in-out;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 30px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 22px;
-  width: 150px;
-  height: 60px;
-  margin: 20px 0;
-}
-
-#reinicia:hover {
+#reinicia:hover,
+#finaliza:hover,
+#reiniciaResultado:hover {
   background-position: 0;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -392,7 +377,10 @@ header {
 
 /* -------- ESTILIZAÇÃO DO FOOTER ------ */
 footer {
+  margin: 20px 20px 0;
   text-align: right;
-  color: #3a3733
+  color: #3a3733;
+  font-size: 15px;
 }
+
 /* -------- ESTILIZAÇÃO DO FOOTER ------  */

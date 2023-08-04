@@ -6,10 +6,10 @@ import { formatarDataHora, formatarTempo } from "../../utils/utils.js";
 import { criaTabelaMediaAcertos, criaTabelaMediaErros } from "./calculaMedia.js";
 import { criaTabelaRanking } from "./ranking.js";
 
-const dataHoraPreenchimento = new Date();
 
 // Captura as informações do usuário
 export function pegaInfoUsuario() {
+    const dataHoraPreenchimento = new Date();
     const nome = document.getElementById("nome").value;
     let infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento) };
     infoUsuarios.push(infoUsuario);
