@@ -1,23 +1,22 @@
-import { infoUsuarios } from "../infoUsuario.js";
-import { temaSelecionado } from "../usuario.js";
-import { acertos, erros } from "../perguntas.js";
-import { totalSegundos } from "../cronometro.js";
-import { formatarDataHora, formatarTempo } from "../../utils/utils.js";
-import { criaTabelaMediaAcertos, criaTabelaMediaErros } from "./calculaMedia.js";
-import { criaTabelaRanking } from "./ranking.js";
-
+import {infoUsuarios} from "../infoUsuario.js";
+import {temaSelecionado} from "../usuario.js";
+import {acertos, erros} from "../perguntas.js";
+import {totalSegundos} from "../cronometro.js";
+import {formatarDataHora, formatarTempo} from "../../utils/utils.js";
+import {criaTabelaMediaAcertos, criaTabelaMediaErros} from "./calculaMedia.js";
+import {criaTabelaRanking} from "./ranking.js";
 
 // Captura as informações do usuário
 export function pegaInfoUsuario() {
     const dataHoraPreenchimento = new Date();
     const nome = document.getElementById("nome").value;
-    let infoUsuario = { nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento) };
+    let infoUsuario = {nome, temaSelecionado: temaSelecionado.value, acertos, erros, totalSegundos, dataHoraPreenchimento: formatarDataHora(dataHoraPreenchimento)};
     infoUsuarios.push(infoUsuario);
     criaTabelaResultados();
     criaTabelaMediaAcertos(infoUsuarios);
     criaTabelaMediaErros(infoUsuarios);
     criaTabelaRanking(infoUsuarios);
-};
+}
 
 function criaTabelaResultados() {
     const tabela = document.getElementById("tabela-resultados");
@@ -38,4 +37,4 @@ function criaTabelaResultados() {
 
         tbody.appendChild(linha);
     }
-};
+}

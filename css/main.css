@@ -7,16 +7,13 @@
   --tamanhoFonteTitulo: 28px
 }
 
-body {
+body, html {
   height: 100%;
   font-family: 'Acme', sans-serif;
   background-size: cover;
 }
 
-
-
-
-/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+/* ------- INICIA TUDO QUE ESTÁ NO HEADER ------ */
 
 header {
   padding-top: 20px;
@@ -65,16 +62,9 @@ header {
   transition: 0.5s;
 }
 
-/* ------- TUDO O QUE ESTÁ NO HEADER ------ */
+/* ------- FINALIZATUDO O QUE ESTÁ NO HEADER ------ */
 
-
-
-
-
-
-/* ------- TUDO SOBRE MODO ESCURO ------ */
-
-
+/* ------- INICIA TUDO SOBRE MODO ESCURO ------ */
 
 .dark {
   color: #000000;
@@ -108,13 +98,13 @@ header {
   color: white;
 }
 
-/* ------- TUDO SOBRE MODO ESCURO ------ */
+.dark footer {
+  color: white;
+}
 
+/* ------- FINALIZA TUDO SOBRE MODO ESCURO ------ */
 
-
-
-
-/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
+/* ------- INICIA TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
 
 #tema,
 #nome {
@@ -172,16 +162,9 @@ header {
   box-shadow: 5px 5px 20px black;
   transition: 0.5s;
 }
+/* ------- FINALIZA TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
 
-
-
-/* ------- TUDO O QUE ESTÁ NA PARTE DE USUÁRIO ------ */
-
-
-
-
-
-/* ------- TUDO SOBRE CRONÔMETRO ------ */
+/* ------- INICIA TUDO SOBRE CRONÔMETRO ------ */
 
 /* Estilo para o container do cronômetro */
 .cronometro {
@@ -216,13 +199,9 @@ header {
   transform: translate(-50%, -50%);
 }
 
-/* ------- TUDO SOBRE CRONÔMETRO ------ */
+/* ------- FINALIZA TUDO SOBRE CRONÔMETRO ------ */
 
-
-
-
-
-/* ------- TUDO SOBRE PERGUNTAS ------ */
+/* ------- INICIA TUDO SOBRE PERGUNTAS ------ */
 
 #perguntas {
   padding: 60px;
@@ -281,13 +260,9 @@ header {
 
 }
 
-/* ------- TUDO SOBRE PERGUNTAS ------ */
+/* ------- FINALIZA TUDO SOBRE PERGUNTAS ------ */
 
-
-
-
-
-/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
+/* ------- INICIA TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
 
 #reinicia,
 #finaliza,
@@ -316,13 +291,9 @@ header {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* ------- TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
+/* ------- FINALIZA TUDO SOBRE BOTÕES FINALIZAR E REINICIAR ------ */
 
-
-
-
-
-/* ------- TUDO SOBRE RANKING ------ */
+/* ------- INICIA TUDO SOBRE RANKING ------ */
 
 #resultados {
   text-align: center;
@@ -372,15 +343,16 @@ header {
 
 }
 
-
-/* ------- TUDO SOBRE RANKING ------ */
+/* ------- FINALIZA TUDO SOBRE RANKING ------ */
 
 /* -------- ESTILIZAÇÃO DO FOOTER ------ */
 footer {
-  margin: 20px 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 20px 20px 10px;
   text-align: right;
   color: #3a3733;
   font-size: 15px;
 }
-
 /* -------- ESTILIZAÇÃO DO FOOTER ------  */
