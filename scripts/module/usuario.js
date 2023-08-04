@@ -12,6 +12,7 @@ export function iniciaQuiz() {
     const inputNome = document.querySelector("#nome").value;
     if (inputNome.trim() != "") {
         if (temaSelecionado.value === "filmes") {
+
             criaPerguntas(perguntasFilmes);
             respostasCorretas(perguntasFilmes);
             iniciaTimer();
@@ -20,6 +21,7 @@ export function iniciaQuiz() {
             perguntasSection.style.display = "flex";
 
         } else if (temaSelecionado.value === "livros") {
+
             criaPerguntas(perguntasLivros);
             respostasCorretas(perguntasLivros);
             iniciaTimer();
@@ -28,6 +30,7 @@ export function iniciaQuiz() {
             perguntasSection.style.display = "flex";
 
         } else if (temaSelecionado.value === "series") {
+
             criaPerguntas(perguntasSeries);
             respostasCorretas(perguntasSeries);
             iniciaTimer();

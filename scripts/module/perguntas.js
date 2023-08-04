@@ -17,6 +17,18 @@ export function criaPerguntas(vetor) {
 
     perguntasSection.innerHTML = "";
 
+    switch (temaSelecionado.value) {
+        case "filmes":
+            perguntasSection.innerHTML += "<h1>Tema: Filmes</h1>";
+            break;
+        case "series":
+            perguntasSection.innerHTML += "<h1>Tema: Séries</h1>";
+            break;
+        case "livros":
+            perguntasSection.innerHTML += "<h1>Tema: Livros</h1>";
+            break;
+    }
+
     vetor.forEach((pergunta, i) => {
         perguntasSection.innerHTML += `
             <div class="divPergunta">
@@ -85,6 +97,7 @@ function respostasUsuario() {
         resultadoSection.classList.remove("esconde");
         cronometroSection.classList.add("esconde");
         btnFinaliza.classList.add("esconde");
+        perguntasSection.style.display = "none";
     }
 
 };
